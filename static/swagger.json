@@ -1,0 +1,150 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Test task",
+    "description": "Flask API for working with dataset",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/filter": {
+      "get": {
+        "summary": "Filter data",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter by category",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "description": "Filter by gender",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "birthDate",
+            "in": "query",
+            "description": "Filter by Date of Birth",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "age",
+            "in": "query",
+            "description": "Filter by age",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "age_range",
+            "in": "query",
+            "description": "Filter by age range like 25-30",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered data"
+          },
+          "500": {
+            "description": "Error on server side"
+          }
+        }
+      }
+    },
+    "/export": {
+      "get": {
+        "summary": "Export data",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter by category",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "description": "Filter by gender",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "birthDate",
+            "in": "query",
+            "description": "Filter by Date of Birth",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "age",
+            "in": "query",
+            "description": "Filter by age",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "age_range",
+            "in": "query",
+            "description": "Filter by age range like 25-30",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exported CSV data"
+          },
+          "500": {
+            "description": "Error on server side"
+          }
+        }
+      }
+    }
+  }
+}
